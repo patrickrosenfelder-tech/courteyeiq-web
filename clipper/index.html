@@ -21,7 +21,7 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-deco
 .nav{position:sticky;top:0;z-index:20;background:rgba(247,248,245,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(8,9,8,.07)}
 .nav-inner{width:min(1240px,100%);height:58px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:780;letter-spacing:-.045em}
-.logo-mark{width:38px;height:30px;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,26,22,.08)}
+.logo-mark{display:block;height:40px;width:auto;object-fit:contain}
 .logo-iq{color:#37bcd0}
 .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:#2f3431}.nav-links a:not(.nav-cta):hover{color:var(--green-dark)}
 .nav-cta{padding:9px 16px;border-radius:999px;background:var(--ink);color:var(--white);font-weight:750}
@@ -50,7 +50,7 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
 .pitch{position:sticky;top:86px}.pitch .kicker{color:#7ee0b1}.pitch h2{font-size:clamp(40px,5.3vw,78px);line-height:.93;letter-spacing:-.075em;text-wrap:balance}.pitch p{color:#aeb8b2;font-size:18px;margin-top:18px;max-width:460px}
 .brand-card{margin-top:34px;width:min(300px,100%);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 30px 90px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.16)}
 .brand-card img{display:block;width:100%;height:auto}
-.tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px}.tier{background:var(--black2);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:20px}.tier strong{display:block;font-size:17px;margin-bottom:5px}.tier span{color:#aeb8b2;font-size:14px}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px}.tier{background:var(--black2);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:20px}.tier strong{display:block;font-size:17px;margin-bottom:5px}.tier span{color:#c5cec9;font-size:14px}
 .form-panel{background:var(--white);color:var(--ink);border-radius:34px;padding:28px;box-shadow:0 40px 100px rgba(0,0,0,.28)}
 .form-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:22px}.form-head h2{font-size:31px;letter-spacing:-.06em}.badge{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:7px 11px;font-size:13px;font-weight:750;white-space:nowrap}
 .form{display:grid;gap:14px}.field{display:grid;gap:7px}.label{font-size:13px;font-weight:780;color:#444c47}.control{width:100%;border:1px solid #d9ded9;border-radius:16px;background:#fff;color:var(--ink);min-height:50px;padding:13px 14px;outline:none}.control:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(22,163,111,.14)}
@@ -67,16 +67,15 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
   .nav-links a:not(.nav-cta){display:none}.hero{padding-top:52px}.section-head,.contrast-inner,.wait-box{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.pitch{position:static}.hero-photo{border-radius:28px}.stats{grid-template-columns:1fr 1fr 1fr}.stat{padding:18px 16px}.wait-form{width:100%}
 }
 @media(max-width:580px){
-  .nav-inner{height:54px;padding:0 16px}.logo{font-size:17px}.logo-mark{width:32px;height:26px}.nav-cta{padding:8px 12px}.hero{padding:42px 16px 26px}h1{font-size:54px}.hero-copy{font-size:17px}.hero-actions{display:grid}.hero-photo{margin-top:36px;border-radius:22px}.stats{grid-template-columns:1fr}.section,.contrast-inner,.waitlist{padding-left:16px;padding-right:16px}.section{padding-top:52px;padding-bottom:52px}.card,.form-panel,.wait-box{border-radius:24px;padding:22px}.tiers,.grid2{grid-template-columns:1fr}.form-head{display:grid}.wait-form{display:grid;min-width:0}.footer{display:grid;padding-left:16px;padding-right:16px}
+  .nav-inner{height:54px;padding:0 16px}.logo{font-size:17px}.logo-mark{height:40px}.nav-cta{padding:8px 12px}.hero{padding:42px 16px 26px}h1{font-size:54px}.hero-copy{font-size:17px}.hero-actions{display:grid}.hero-photo{margin-top:36px;border-radius:22px}.stats{grid-template-columns:1fr}.section,.contrast-inner,.waitlist{padding-left:16px;padding-right:16px}.section{padding-top:52px;padding-bottom:52px}.card,.form-panel,.wait-box{border-radius:24px;padding:22px}.tiers,.grid2{grid-template-columns:1fr}.form-head{display:grid}.wait-form{display:grid;min-width:0}.footer{display:grid;padding-left:16px;padding-right:16px}
 }
 </style>
 </head>
 <body>
 <nav class="nav" aria-label="CourtEyeIQ">
   <div class="nav-inner">
-    <a class="logo" href="#">
-      <img class="logo-mark" src="assets/courteyeiq-logo-symbol.png" alt="" aria-hidden="true">
-      <span>CourtEye<span class="logo-iq">IQ</span></span>
+    <a class="logo" href="/">
+      <img class="logo-mark" src="../assets/logo.png" alt="CourtEyeIQ">
     </a>
     <div class="nav-links">
       <a href="#how">How it works</a>
@@ -240,4 +239,3 @@ document.getElementById("waitlistForm").addEventListener("submit", (event) => {
 </script>
 </body>
 </html>
-
