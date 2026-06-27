@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>CourtEyeIQ Clipper</title>
+<meta name="description" content="Upload your tennis or pickleball video and get clean match clips or highlight reels in minutes."/>
+<link rel="icon" type="image/png" href="assets/courteyeiq-logo-lockup.png"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f7f8f5;--white:#fff;--ink:#080908;--muted:#6b716d;--soft:#e8ebe6;
+  --green:#16a36f;--green-dark:#08734c;--green-soft:#e8f7ef;
+  --black:#050605;--black2:#111411;--line:rgba(8,9,8,.12);
+  --shadow:0 26px 80px rgba(20,26,22,.12);
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.45;overflow-x:hidden}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,248,245,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(8,9,8,.07)}
+.nav-inner{width:min(1240px,100%);height:58px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:780;letter-spacing:-.045em}
+.logo-mark{width:38px;height:30px;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 4px 14px rgba(20,26,22,.08)}
+.logo-iq{color:#37bcd0}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:#2f3431}.nav-links a:not(.nav-cta):hover{color:var(--green-dark)}
+.nav-cta{padding:9px 16px;border-radius:999px;background:var(--ink);color:var(--white);font-weight:750}
+.hero{width:min(1240px,100%);margin:0 auto;padding:78px 24px 42px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;background:var(--white);padding:8px 13px;color:#4e5651;font-size:13px;box-shadow:0 8px 30px rgba(20,26,22,.05);margin-bottom:24px}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-weight:820;max-width:1120px;margin:0 auto;text-wrap:balance}
+.subhead{font-size:clamp(22px,3vw,36px);font-weight:760;letter-spacing:-.055em;color:var(--green-dark);margin-top:24px}
+.hero-copy{max-width:680px;margin:15px auto 0;color:var(--muted);font-size:19px}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{border:0;border-radius:999px;min-height:48px;padding:13px 23px;font-weight:780;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-1px)}
+.primary{background:var(--green);color:var(--white);box-shadow:0 14px 34px rgba(22,163,111,.23)}.primary:hover{background:var(--green-dark)}
+.secondary{background:var(--white);color:var(--ink);border:1px solid var(--line)}.secondary:hover{box-shadow:0 12px 34px rgba(20,26,22,.1)}
+.hero-photo{width:min(1120px,100%);margin:54px auto 0;border-radius:42px;overflow:hidden;background:var(--white);box-shadow:var(--shadow);border:1px solid rgba(8,9,8,.07)}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(8,9,8,.08);border-top:1px solid rgba(8,9,8,.08)}
+.stat{background:var(--white);padding:24px 20px;text-align:left}.stat strong{display:block;font-size:clamp(28px,4vw,48px);line-height:1;letter-spacing:-.06em}.stat span{display:block;margin-top:6px;color:var(--muted);font-size:14px}
+.section{width:min(1240px,100%);margin:0 auto;padding:72px 24px}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;margin-bottom:28px}
+.kicker{color:var(--green-dark);font-size:13px;font-weight:820;letter-spacing:.09em;text-transform:uppercase}
+.section h2{font-size:clamp(38px,5.4vw,76px);line-height:.94;letter-spacing:-.075em;text-wrap:balance}.section-head p{color:var(--muted);font-size:18px;max-width:520px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--white);border:1px solid rgba(8,9,8,.08);border-radius:30px;padding:28px;box-shadow:0 18px 60px rgba(20,26,22,.07);min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
+.num{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--green-soft);color:var(--green-dark);font-weight:850}.card h3{font-size:28px;letter-spacing:-.055em;margin-bottom:8px}.card p{color:var(--muted)}
+.contrast{background:var(--black);color:var(--white);margin-top:36px}.contrast-inner{width:min(1240px,100%);margin:0 auto;padding:82px 24px;display:grid;grid-template-columns:.86fr 1.14fr;gap:24px;align-items:start}
+.pitch{position:sticky;top:86px}.pitch .kicker{color:#7ee0b1}.pitch h2{font-size:clamp(40px,5.3vw,78px);line-height:.93;letter-spacing:-.075em;text-wrap:balance}.pitch p{color:#aeb8b2;font-size:18px;margin-top:18px;max-width:460px}
+.brand-card{margin-top:34px;width:min(300px,100%);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 30px 90px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.16)}
+.brand-card img{display:block;width:100%;height:auto}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px}.tier{background:var(--black2);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:20px}.tier strong{display:block;font-size:17px;margin-bottom:5px}.tier span{color:#aeb8b2;font-size:14px}
+.form-panel{background:var(--white);color:var(--ink);border-radius:34px;padding:28px;box-shadow:0 40px 100px rgba(0,0,0,.28)}
+.form-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:22px}.form-head h2{font-size:31px;letter-spacing:-.06em}.badge{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:7px 11px;font-size:13px;font-weight:750;white-space:nowrap}
+.form{display:grid;gap:14px}.field{display:grid;gap:7px}.label{font-size:13px;font-weight:780;color:#444c47}.control{width:100%;border:1px solid #d9ded9;border-radius:16px;background:#fff;color:var(--ink);min-height:50px;padding:13px 14px;outline:none}.control:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(22,163,111,.14)}
+.control::file-selector-button{border:0;border-radius:11px;background:var(--green-soft);color:var(--green-dark);font-weight:800;margin-right:10px;padding:8px 11px}.hint{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:11px;align-items:flex-start;border:1px solid #e1e5e0;border-radius:16px;background:#fbfcfa;padding:13px;color:#59615c;font-size:13px}.check input{width:18px;height:18px;margin-top:1px;accent-color:var(--green);flex:0 0 auto}
+.submit{width:100%;border-radius:16px;background:var(--ink);color:var(--white)}.submit:hover{background:#202420}
+.message{display:none;border:1px solid rgba(22,163,111,.28);border-radius:16px;background:var(--green-soft);color:var(--green-dark);padding:13px 14px;font-size:14px}.message.show{display:block}
+.waitlist{width:min(1240px,100%);margin:0 auto;padding:76px 24px}.wait-box{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:var(--white);border:1px solid rgba(8,9,8,.08);border-radius:34px;padding:34px;box-shadow:var(--shadow)}
+.wait-box h2{font-size:clamp(36px,5vw,70px);line-height:.94;letter-spacing:-.075em;margin:8px 0}.wait-box p{color:var(--muted);font-size:18px;max-width:680px}.wait-form{display:flex;gap:10px;min-width:min(470px,100%)}.wait-form .btn{background:var(--green);color:var(--white);white-space:nowrap}
+.footer{width:min(1240px,100%);margin:0 auto;padding:28px 24px 42px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid rgba(8,9,8,.08);font-size:14px}.footer strong{color:var(--ink)}
+.footer-brand{display:flex;align-items:center;gap:11px}.footer-mark{width:42px;height:34px;object-fit:contain;border-radius:11px;background:#fff;box-shadow:0 4px 14px rgba(20,26,22,.08)}
+@supports (padding: env(safe-area-inset-bottom)){body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-bottom:env(safe-area-inset-bottom)}}
+@media(max-width:900px){
+  .nav-links a:not(.nav-cta){display:none}.hero{padding-top:52px}.section-head,.contrast-inner,.wait-box{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.pitch{position:static}.hero-photo{border-radius:28px}.stats{grid-template-columns:1fr 1fr 1fr}.stat{padding:18px 16px}.wait-form{width:100%}
+}
+@media(max-width:580px){
+  .nav-inner{height:54px;padding:0 16px}.logo{font-size:17px}.logo-mark{width:32px;height:26px}.nav-cta{padding:8px 12px}.hero{padding:42px 16px 26px}h1{font-size:54px}.hero-copy{font-size:17px}.hero-actions{display:grid}.hero-photo{margin-top:36px;border-radius:22px}.stats{grid-template-columns:1fr}.section,.contrast-inner,.waitlist{padding-left:16px;padding-right:16px}.section{padding-top:52px;padding-bottom:52px}.card,.form-panel,.wait-box{border-radius:24px;padding:22px}.tiers,.grid2{grid-template-columns:1fr}.form-head{display:grid}.wait-form{display:grid;min-width:0}.footer{display:grid;padding-left:16px;padding-right:16px}
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="CourtEyeIQ">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <img class="logo-mark" src="assets/courteyeiq-logo-symbol.png" alt="" aria-hidden="true">
+      <span>CourtEye<span class="logo-iq">IQ</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#upload">Upload</a>
+      <a href="#waitlist">Scored highlights</a>
+      <a class="nav-cta" href="#upload">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Free clipper beta for tennis and pickleball</div>
+    <h1>Stop watching dead time. Get your highlights in minutes.</h1>
+    <p class="subhead">Free for tennis and pickleball players.</p>
+    <p class="hero-copy">Upload your match video and get back a clean match cut or a shareable highlight reel, without scrubbing through every pause yourself.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#upload">Upload a video</a>
+      <a class="btn secondary" href="#how">See how it works</a>
+    </div>
+    <figure class="hero-photo">
+      <img src="assets/clipper-hero-product.png" alt="CourtEyeIQ Clipper shown as a premium sports video product with tennis and pickleball gear">
+      <figcaption class="stats">
+        <span class="stat"><strong>5-15</strong><span>minute processing after upload</span></span>
+        <span class="stat"><strong>25GB</strong><span>MP4 or MOV upload limit</span></span>
+        <span class="stat"><strong>2</strong><span>output styles available now</span></span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="how">
+    <div class="section-head">
+      <div>
+        <div class="kicker">How it works</div>
+        <h2>Full match in. Watchable clips out.</h2>
+      </div>
+      <p>CourtEyeIQ Clipper is built for players who record matches, then never find time to review them. Turnaround depends on your upload and download speed, so WiFi is best for large files.</p>
+    </div>
+    <div class="steps">
+      <article class="card">
+        <div class="num">1</div>
+        <div><h3>Upload</h3><p>Send us your tennis or pickleball video in MP4 or MOV format, up to 25GB. For very large files, start the upload on WiFi or let it run overnight.</p></div>
+      </article>
+      <article class="card">
+        <div class="num">2</div>
+        <div><h3>We clip it</h3><p>We remove dead time and package the output tier you selected.</p></div>
+      </article>
+      <article class="card">
+        <div class="num">3</div>
+        <div><h3>Download your highlights</h3><p>Get an email link when your clean match or highlight reel is ready.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contrast" id="upload">
+    <div class="contrast-inner">
+      <aside class="pitch">
+        <div class="kicker">Upload</div>
+        <h2>Choose the version you want back.</h2>
+        <p>Option 1 keeps the match flow intact. Option 2 turns the best moments into a tight reel for sharing, coaching, or quick review.</p>
+        <div class="tiers">
+          <div class="tier"><strong>Option 1: Clean match</strong><span>Dead time removed, match flow preserved.</span></div>
+          <div class="tier"><strong>Option 2: Highlight reel</strong><span>The best moments, ready to watch.</span></div>
+        </div>
+        <figure class="brand-card">
+          <img src="assets/courteyeiq-logo-lockup.png" alt="CourtEyeIQ logo">
+        </figure>
+      </aside>
+
+      <section class="form-panel" aria-labelledby="upload-title">
+        <div class="form-head">
+          <h2 id="upload-title">Upload your match</h2>
+          <span class="badge">5-15 min after upload</span>
+        </div>
+        <form class="form" id="clipperForm">
+          <div class="field">
+            <label class="label" for="email">Email</label>
+            <input class="control" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label class="label" for="video">Video file</label>
+            <input class="control" id="video" name="video" type="file" accept="video/mp4,video/quicktime,.mp4,.mov" required>
+            <div class="hint">MP4 or MOV, max 25GB. Upload and download time depend on your connection.</div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label class="label" for="sport">Sport</label>
+              <select class="control" id="sport" name="sport" required>
+                <option value="tennis">Tennis</option>
+                <option value="pickleball">Pickleball</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="label" for="tier">Output tier</label>
+              <select class="control" id="tier" name="tier" required>
+                <option value="clean-match">Option 1: Clean match</option>
+                <option value="highlight-reel">Option 2: Highlight reel</option>
+              </select>
+            </div>
+          </div>
+          <label class="check"><input type="checkbox" name="marketing" required><span>I agree to receive marketing emails from CourtEyeIQ.</span></label>
+          <label class="check"><input type="checkbox" name="training" required><span>I agree that CourtEyeIQ may use this video to improve and train its clipping models.</span></label>
+          <button class="btn submit" type="submit">Submit video</button>
+          <div class="message" id="formMessage" role="status" aria-live="polite">We'll email you when your highlights are ready. Processing usually takes 5-15 minutes after your upload completes; upload and download time depend on your connection speed.</div>
+        </form>
+      </section>
+    </div>
+  </section>
+
+  <section class="waitlist" id="waitlist">
+    <div class="wait-box">
+      <div>
+        <div class="kicker">Option 3 waitlist</div>
+        <h2>Scored highlights are next.</h2>
+        <p>Point-by-point clips with score context are coming soon. Join the list and we will let you know when they are available.</p>
+      </div>
+      <form class="wait-form" id="waitlistForm">
+        <input class="control" name="waitlist-email" type="email" autocomplete="email" placeholder="you@example.com" aria-label="Waitlist email" required>
+        <button class="btn" type="submit">Notify me when available</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <img class="footer-mark" src="assets/courteyeiq-logo-symbol.png" alt="" aria-hidden="true">
+    <strong>Powered by CourtEyeIQ</strong>
+  </div>
+  <span>Clipper beta for tennis and pickleball players.</span>
+</footer>
+
+<script>
+const maxBytes = 25 * 1024 * 1024 * 1024;
+const form = document.getElementById("clipperForm");
+const fileInput = document.getElementById("video");
+const message = document.getElementById("formMessage");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const file = fileInput.files[0];
+  if (file && file.size > maxBytes) {
+    fileInput.setCustomValidity("Please choose a video under 25GB.");
+    fileInput.reportValidity();
+    return;
+  }
+  fileInput.setCustomValidity("");
+  message.classList.add("show");
+  form.reset();
+});
+
+fileInput.addEventListener("change", () => {
+  const file = fileInput.files[0];
+  fileInput.setCustomValidity(file && file.size > maxBytes ? "Please choose a video under 25GB." : "");
+});
+
+document.getElementById("waitlistForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  event.currentTarget.reset();
+});
+</script>
+</body>
+</html>
+
