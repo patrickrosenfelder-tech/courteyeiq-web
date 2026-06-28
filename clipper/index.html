@@ -37,7 +37,7 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
 .primary{background:var(--green);color:var(--white);box-shadow:0 14px 34px rgba(196,30,58,.23)}.primary:hover{background:var(--green-dark)}
 .secondary{background:var(--white);color:var(--ink);border:1px solid var(--line)}.secondary:hover{box-shadow:0 12px 34px rgba(20,26,22,.1)}
 .hero-photo{width:min(1120px,100%);margin:54px auto 0;border-radius:42px;overflow:hidden;background:var(--white);box-shadow:var(--shadow);border:1px solid rgba(8,9,8,.07)}
-.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.hero-photo img,.hero-photo video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .court-illustration{position:relative;display:block;width:100%;aspect-ratio:16/9;background:linear-gradient(90deg,#2f6fb2 0 49.7%,#ffffff 49.7% 50.3%,#2f6fb2 50.3%);overflow:hidden}
 .court-illustration::before{content:"";position:absolute;inset:9% 12%;border:4px solid rgba(255,255,255,.92);box-shadow:inset 0 0 0 4px rgba(47,111,178,.18)}
 .court-illustration::after{content:"";position:absolute;inset:9% 12%;background:linear-gradient(90deg,transparent calc(50% - 2px),rgba(255,255,255,.9) calc(50% - 2px) calc(50% + 2px),transparent calc(50% + 2px)),linear-gradient(180deg,transparent calc(50% - 2px),rgba(255,255,255,.9) calc(50% - 2px) calc(50% + 2px),transparent calc(50% + 2px));}
@@ -92,15 +92,15 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
 <main>
   <section class="hero">
     <div class="eyebrow">Free clipper beta for tennis and pickleball</div>
-    <h1>Stop watching dead time. Get your highlights in minutes.</h1>
-    <p class="subhead">Free for tennis and pickleball players.</p>
+    <h1>Turn a two-hour GoPro file into a twenty-minute rally reel for free.</h1>
+    <p class="subhead">Works on any camera. No Apple Watch. No subscription.</p>
     <p class="hero-copy">Upload your match video and get back a clean match cut or a shareable highlight reel, without scrubbing through every pause yourself.</p>
     <div class="hero-actions">
       <a class="btn primary" href="#upload">Upload a video</a>
       <a class="btn secondary" href="#how">See how it works</a>
     </div>
     <figure class="hero-photo">
-      <span class="court-illustration" role="img" aria-label="Tennis court illustration"></span>
+      <video src="../assets/mixkit-tennis-courts-filmed-from-the-air-5014-full-hd.mp4" autoplay muted loop playsinline aria-label="Aerial video of tennis courts"></video>
       <figcaption class="stats">
         <span class="stat"><strong>5-15</strong><span>minute processing after upload</span></span>
         <span class="stat"><strong>25GB</strong><span>MP4 or MOV upload limit</span></span>
@@ -143,9 +143,6 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
           <div class="tier"><strong>Option 1: Clean match</strong><span>Dead time removed, match flow preserved.</span></div>
           <div class="tier"><strong>Option 2: Highlight reel</strong><span>The best moments, ready to watch.</span></div>
         </div>
-        <figure class="brand-card">
-          <img src="assets/courteyeiq-logo-lockup.png" alt="CourtEyeIQ logo">
-        </figure>
       </aside>
 
       <section class="form-panel" aria-labelledby="upload-title">
