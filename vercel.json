@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/whitepaper.js": {
+      "includeFiles": "content/whitepaper.md"
+    },
+    "api/whitepaper-lite.js": {
+      "includeFiles": "content/whitepaper-lite.md"
+    }
+  },
   "rewrites": [
     { "source": "/clipper", "destination": "/clipper/index.html" },
     { "source": "/whitepaper", "destination": "/api/whitepaper" },
