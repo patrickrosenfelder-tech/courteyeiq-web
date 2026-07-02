@@ -65,10 +65,24 @@
       object-fit: contain;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-link,
     .nav-note {
       color: var(--muted);
       font-size: 0.92rem;
       font-weight: 650;
+      text-decoration: none;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--green-dark);
+      outline: none;
     }
 
     main {
@@ -185,6 +199,11 @@
         display: none;
       }
 
+      .nav-links {
+        gap: 12px;
+        font-size: 0.84rem;
+      }
+
       main {
         padding: 56px 18px 70px;
       }
@@ -210,7 +229,11 @@
       <a class="brand" href="/" aria-label="CourtEyeIQ home">
         <img src="assets/logo.png" alt="CourtEyeIQ">
       </a>
-      <div class="nav-note">Tennis intelligence tools</div>
+      <div class="nav-links">
+        <a class="nav-link" href="/whitepaper">Whitepaper</a>
+        <a class="nav-link" href="/whitepaper-lite">Partner Overview</a>
+        <div class="nav-note">Tennis intelligence tools</div>
+      </div>
     </div>
   </header>
 
@@ -243,6 +266,22 @@
           <span class="description">Track what is planned next for CourtEyeIQ, including scored highlights, coaching tools, and workflow upgrades.</span>
         </span>
         <span class="status">Coming soon</span>
+      </a>
+
+      <a class="card" href="/whitepaper">
+        <span>
+          <span class="label">Whitepaper</span>
+          <span class="description">Read the internal technical overview for CourtEyeIQ architecture, roadmap, current status, and validation milestones.</span>
+        </span>
+        <span class="status">Password protected</span>
+      </a>
+
+      <a class="card" href="/whitepaper-lite">
+        <span>
+          <span class="label">Whitepaper (Partner Overview)</span>
+          <span class="description">Open the partner and investor version with a lighter product, market, and roadmap summary.</span>
+        </span>
+        <span class="status">Password protected</span>
       </a>
     </nav>
   </main>
