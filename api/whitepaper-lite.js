@@ -6,5 +6,5 @@ module.exports = createWhitepaperHandler({
   path: "/whitepaper-lite",
   routeKey: "whitepaper_lite",
   passwordEnv: "WHITEPAPER_LITE_PASSWORD",
-  contentPath: "content/whitepaper-lite.md",
+  contentPath: "api/_content/whitepaper-lite.md",
 });

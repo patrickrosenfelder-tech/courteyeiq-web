@@ -3,10 +3,10 @@
   "trailingSlash": false,
   "functions": {
     "api/whitepaper.js": {
-      "includeFiles": "content/whitepaper.md"
+      "includeFiles": "api/_content/whitepaper.md"
     },
     "api/whitepaper-lite.js": {
-      "includeFiles": "content/whitepaper-lite.md"
+      "includeFiles": "api/_content/whitepaper-lite.md"
     }
   },
   "rewrites": [
