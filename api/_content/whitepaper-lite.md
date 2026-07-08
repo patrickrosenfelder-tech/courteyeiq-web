@@ -111,10 +111,10 @@ Equipment profiles and testing · community data · user accounts and history ·
 
 **In progress:**
 
-- Real on-court dual-camera validation (court access resumes \~Jul 2026)
+- Real on-court dual-camera validation (dual-camera field validation shoot scheduled for early August 2026, returning from travel \~Aug 1)
 - Partner and investor outreach
 
-**Milestone:** Full on-court validation targeted for July 2026, with a live match mode roughly 2–3 months behind that.
+**Milestone:** Full on-court validation targeted for early August 2026, with a live match mode roughly 2–3 months behind that.
 
 ---
 

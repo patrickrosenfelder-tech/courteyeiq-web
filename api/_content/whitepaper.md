@@ -59,12 +59,12 @@ CourtEyeIQ delivers the same core capabilities using hardware everyone already o
 <tr>
 <td>**V0.1**</td>
 <td>Offline PC</td>
-<td>Active — court corner detection now model-based (YOLO11n-pose, 14kp); training in progress on merged HuggingFace + Roboflow dataset (11,922 images). Real dual-cam shoot pending — court access resumes \~Jul 1.</td>
+<td>Active — court corner detection now model-based (YOLO11n-pose, 14kp); training in progress on merged HuggingFace + Roboflow dataset (11,922 images). Dual-camera field validation shoot scheduled for early August 2026 (returning from travel \~Aug 1).</td>
 </tr>
 <tr>
 <td>**V0.2a**</td>
 <td>On-device iPhone</td>
-<td>iOS spike 6/7 complete — \~30 FPS on iPhone 16 Neural Engine. Spike 8 PASS (2026-06-08) — on-court validation pending (Jul 2026).</td>
+<td>iOS spike 6/7 complete — \~30 FPS on iPhone 16 Neural Engine. Spike 8 PASS (2026-06-08) — on-court validation pending (dual-camera field validation shoot scheduled for early August 2026, returning from travel \~Aug 1).</td>
 </tr>
 <tr>
 <td>**V0.2b**</td>
@@ -262,18 +262,18 @@ Racket + string tension profiles · A/B racket test · community string database
 
 **Active blocker:**
 
-Real dual-camera footage — court access resumes \~Jul 1 (Medellín stay). Calibration, ball detection gate, and the 3D triangulation path via simulated cam2 have all passed, but bounce position and in/out accuracy on real stereo footage remain unvalidated. See "July 2026 Ground-Truth Accuracy Test Protocol" under Project Specs.
+Real dual-camera footage — dual-camera field validation shoot scheduled for early August 2026 (returning from travel \~Aug 1). Calibration, ball detection gate, and the 3D triangulation path via simulated cam2 have all passed, but bounce position and in/out accuracy on real stereo footage remain unvalidated. See "July 2026 Ground-Truth Accuracy Test Protocol" under Project Specs.
 
 **Next steps:**
 
 - Visually validate trained court detection model (`best.pt`) on held-out images before trusting it for comparison against the merged dataset
 - Train pickleball-specific court detection model (separate 12kp dataset, 2,444 images)
-- On-court validation of iOS Spike 8 with a real ball (Jul 2026)
+- On-court validation of iOS Spike 8 with a real ball (dual-camera field validation shoot scheduled for early August 2026, returning from travel \~Aug 1)
 - Partner pitch deck (in progress, derived from this whitepaper)
 
 **Estimated timeline:**
 
-- V0.1 milestone: Jul 2026 — gated on real dual-cam shoot (court access resumes \~Jul 1)
+- V0.1 milestone: early August 2026 — gated on dual-camera field validation shoot (returning from travel \~Aug 1)
 - V0.2a iOS demo: concurrent with V0.1
 - V1 full match mode: 2–3 months after V0.1
 
