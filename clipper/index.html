@@ -149,7 +149,7 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
       <section class="form-panel" aria-labelledby="upload-title">
         <div class="form-head">
           <h2 id="upload-title">Upload your match</h2>
-          <span class="badge">5-15 min after upload</span>
+          <span class="badge">Demo</span>
         </div>
         <form class="form" id="clipperForm">
           <div class="field">
@@ -158,7 +158,7 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
           </div>
           <div class="field">
             <label class="label" for="video">Video file</label>
-            <input class="control" id="video" name="video" type="file" accept="video/mp4,video/quicktime,.mp4,.mov" required>
+            <input class="control" id="video" name="file" type="file" accept="video/mp4,video/quicktime,.mp4,.mov" required>
             <div class="hint">MP4 or MOV, max 25GB. Upload and download time depend on your connection.</div>
           </div>
           <div class="grid2">
@@ -171,16 +171,16 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
             </div>
             <div class="field">
               <label class="label" for="tier">Output tier</label>
-              <select class="control" id="tier" name="tier" required>
+              <select class="control" id="tier" name="mode" required>
                 <option value="clean-match">Option 1: Clean match</option>
                 <option value="highlight-reel">Option 2: Highlight reel</option>
               </select>
             </div>
           </div>
           <label class="check"><input type="checkbox" name="marketing" required><span>I agree to receive marketing emails from CourtEyeIQ.</span></label>
-          <label class="check"><input type="checkbox" name="training" required><span>I agree that CourtEyeIQ may use this video to improve and train its clipping models.</span></label>
-          <button class="btn submit" type="submit">Submit video</button>
-          <div class="message" id="formMessage" role="status" aria-live="polite">We'll email you when your highlights are ready. Processing usually takes 5-15 minutes after your upload completes; upload and download time depend on your connection speed.</div>
+          <label class="check"><input type="checkbox" name="training"><span>I agree that CourtEyeIQ may use this video to improve and train its clipping models.</span></label>
+          <button class="btn submit" type="submit">Submit video (Demo)</button>
+          <div class="message" id="formMessage" role="status" aria-live="polite">Demo only — your video is not uploaded or processed yet. The Clipper upload pipeline is coming soon; this form shows the intended flow.</div>
         </form>
       </section>
     </div>
