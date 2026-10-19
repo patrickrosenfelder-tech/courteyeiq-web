@@ -63,7 +63,7 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
 .submit{width:100%;border-radius:16px;background:var(--ink);color:var(--white)}.submit:hover{background:#202420}
 .message{display:none;border:1px solid rgba(196,30,58,.28);border-radius:16px;background:var(--green-soft);color:var(--green-dark);padding:13px 14px;font-size:14px}.message.show{display:block}
 .waitlist{width:min(1240px,100%);margin:0 auto;padding:76px 24px}.wait-box{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:var(--white);border:1px solid rgba(8,9,8,.08);border-radius:34px;padding:34px;box-shadow:var(--shadow)}
-.wait-box h2{font-size:clamp(36px,5vw,70px);line-height:.94;letter-spacing:-.075em;margin:8px 0}.wait-box p{color:var(--muted);font-size:18px;max-width:680px}.wait-form{display:flex;gap:10px;min-width:min(470px,100%)}.wait-form .btn{background:var(--green);color:var(--white);white-space:nowrap}
+.wait-box h2{font-size:clamp(36px,5vw,70px);line-height:.94;letter-spacing:-.075em;margin:8px 0}.wait-box p{color:var(--muted);font-size:18px;max-width:680px}.wait-form{display:flex;gap:10px;min-width:min(470px,100%)}.wait-form+.message{margin-top:10px}.wait-form .btn{background:var(--green);color:var(--white);white-space:nowrap}
 .footer{width:min(1240px,100%);margin:0 auto;padding:28px 24px 42px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid rgba(8,9,8,.08);font-size:14px}.footer strong{color:var(--ink)}
 .footer-brand{display:flex;align-items:center;gap:11px}.footer-mark{height:32px;width:auto;object-fit:contain;border-radius:11px;background:#fff;box-shadow:0 4px 14px rgba(20,26,22,.08)}
 @supports (padding: env(safe-area-inset-bottom)){body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-bottom:env(safe-area-inset-bottom)}}
@@ -189,14 +189,17 @@ h1{font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:-.082em;font-we
   <section class="waitlist" id="waitlist">
     <div class="wait-box">
       <div>
-        <div class="kicker">Option 3 waitlist</div>
+        <div class="kicker">Option 3 waitlist (Demo)</div>
         <h2>Scored highlights are next.</h2>
-        <p>Point-by-point clips with score context are coming soon. Join the list and we will let you know when they are available.</p>
+        <p>Point-by-point clips with score context are coming soon. This waitlist is a demo too: emails are not saved yet, so no one will be notified.</p>
       </div>
-      <form class="wait-form" id="waitlistForm">
-        <input class="control" name="waitlist-email" type="email" autocomplete="email" placeholder="you@example.com" aria-label="Waitlist email" required>
-        <button class="btn" type="submit">Notify me when available</button>
-      </form>
+      <div>
+        <form class="wait-form" id="waitlistForm">
+          <input class="control" name="waitlist-email" type="email" autocomplete="email" placeholder="you@example.com" aria-label="Waitlist email" required>
+          <button class="btn" type="submit">Join waitlist (Demo)</button>
+        </form>
+        <div class="message" id="waitlistMessage" role="status" aria-live="polite">Demo only — your email was not saved. The waitlist is not live yet.</div>
+      </div>
     </div>
   </section>
 </main>
@@ -235,6 +238,7 @@ fileInput.addEventListener("change", () => {
 
 document.getElementById("waitlistForm").addEventListener("submit", (event) => {
   event.preventDefault();
+  document.getElementById("waitlistMessage").classList.add("show");
   event.currentTarget.reset();
 });
 </script>

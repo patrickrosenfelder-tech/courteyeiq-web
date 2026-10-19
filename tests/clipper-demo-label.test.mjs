@@ -52,6 +52,8 @@ test("no copy promises a live service", () => {
     /for free\.<\/h1>/,
     />Upload a video</,
     />Get started</,
+    /we will let you know/,
+    /Notify me when available/,
   ]) {
     assert.doesNotMatch(html, claim);
   }
@@ -63,4 +65,13 @@ test("hub card links to the Clipper as a demo", () => {
   assert.match(card, /Demo only — uploads are not live yet\./);
   assert.match(card, /<span class="status status-beta">Demo<\/span>/);
   assert.doesNotMatch(card, /Free, no account needed/);
+});
+
+test("waitlist is demo-labeled before interaction and on submit", () => {
+  const waitlist = html.match(/<section class="waitlist" id="waitlist">([\s\S]*?)<\/section>/)[1];
+  assert.match(waitlist, /<div class="kicker">Option 3 waitlist \(Demo\)<\/div>/);
+  assert.match(waitlist, /emails are not saved yet, so no one will be notified\./);
+  assert.match(waitlist, /<button class="btn" type="submit">Join waitlist \(Demo\)<\/button>/);
+  assert.match(waitlist, /id="waitlistMessage"[^>]*>Demo only — your email was not saved\./);
+  assert.match(html, /getElementById\("waitlistMessage"\)\.classList\.add\("show"\)/);
 });
