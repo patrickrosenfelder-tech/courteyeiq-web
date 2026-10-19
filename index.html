@@ -111,6 +111,7 @@
       /* Expand touch target with padding without changing visual size */
       padding: 14px 12px;
       border-radius: 6px;
+      white-space: nowrap;
     }
 
     .nav-link:hover {
@@ -158,6 +159,8 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      /* Equal-height cards across rows, not just within a row */
+      grid-auto-rows: 1fr;
       gap: 18px;
     }
 
@@ -287,6 +290,9 @@
 
       .nav-links {
         gap: 0;
+      }
+
+      .nav-link {
         font-size: 0.84rem;
       }
 
@@ -304,6 +310,17 @@
 
       .card {
         min-height: 132px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .nav-inner {
+        padding: 0 14px;
+        gap: 8px;
+      }
+
+      .nav-link {
+        padding: 14px 7px;
       }
     }
   </style>
