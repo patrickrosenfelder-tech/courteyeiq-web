@@ -12,8 +12,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CourtEyeIQ — AI-Powered Tennis &amp; Pickleball Analytics">
   <meta name="twitter:description" content="From match footage to insights — automatically. No expensive hardware, no manual setup.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <title>CourtEyeIQ — AI-Powered Tennis &amp; Pickleball Analytics</title>
   <style>
     :root {
@@ -88,6 +91,10 @@
       /* Ensure logo link meets 44×44px touch target */
       min-height: 44px;
       padding: 2px 0;
+    }
+
+    .brand picture {
+      display: contents;
     }
 
     .brand img {
@@ -314,7 +321,10 @@
   <header class="topbar">
     <div class="nav-inner">
       <a class="brand" href="/" aria-label="CourtEyeIQ home">
-        <img src="assets/logo.png" alt="CourtEyeIQ" width="auto" height="40">
+        <picture>
+          <source srcset="/assets/logo.webp" type="image/webp">
+          <img src="/assets/logo.png" alt="CourtEyeIQ" width="83" height="80" loading="eager" decoding="async">
+        </picture>
       </a>
       <nav class="nav-links" aria-label="Site navigation">
         <a class="nav-link" href="/whitepaper">Whitepaper</a>
