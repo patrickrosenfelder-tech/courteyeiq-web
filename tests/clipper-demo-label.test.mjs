@@ -75,3 +75,11 @@ test("waitlist is demo-labeled before interaction and on submit", () => {
   assert.match(waitlist, /id="waitlistMessage"[^>]*>Demo only — your email was not saved\./);
   assert.match(html, /getElementById\("waitlistMessage"\)\.classList\.add\("show"\)/);
 });
+
+test("roadmap card marks the Clipper as a demo, not live", () => {
+  const roadmap = readFileSync(new URL("../roadmap/index.html", import.meta.url), "utf8");
+  const card = roadmap.match(/<li class="item">\s*<div class="item-top">[\s\S]*?<strong>Clipper \(dead-time removal\)<\/strong>([\s\S]*?)<\/li>/)[1];
+  assert.match(card, /<span class="badge demo">DEMO<\/span>/);
+  assert.match(card, /Demo preview at courteyeiq\.com\/clipper; uploads are not live yet\./);
+  assert.doesNotMatch(card, /LIVE|free, live/);
+});
